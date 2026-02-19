@@ -1,0 +1,107 @@
+/* variable styles */
+:root {
+  --gp-consent-banner-accept-btn-bg-color: #fff;
+  --gp-consent-banner-accept-btn-text-color: #000;
+  --gp-consent-banner-bg-color: #0e99f6;
+  --gp-consent-banner-decline-btn-bg-color: transparent;
+  --gp-consent-banner-decline-btn-text-color: #fff;
+  --gp-consent-banner-privacy-link-text-color: #000;
+  --gp-consent-banner-text-color: #fff;
+}
+
+.gropulse-consent-banner-wrapper {
+  display: none;
+}
+
+.gropulse-consent-banner {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 20px 0;
+
+  color: var(--gp-consent-banner-text-color);
+  background-color: var(--gp-consent-banner-bg-color);
+}
+.gropulse-consent-banner__text-wrapper {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  flex-grow: 1;
+
+  margin: 0;
+  padding-right: 30px;
+  padding-left: 120px;
+}
+.gropulse-consent-banner__privacy-policy-link {
+  margin-left: 5px;
+
+  text-decoration: underline;
+
+  color: var(--gp-consent-banner-privacy-link-text-color);
+}
+.gropulse-consent-banner__button-wrapper {
+  flex-basis: auto;
+
+  min-width: 450px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+  padding-right: 120px;
+
+  text-align: right;
+}
+.gropulse-consent-banner__button-wrapper button {
+  font-size: 16px;
+  font-weight: 500;
+
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 10px 35px;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+}
+.gropulse-consent-banner__accept-button {
+  color: var(--gp-consent-banner-accept-btn-text-color);
+  background-color: var(--gp-consent-banner-accept-btn-bg-color);
+}
+.gropulse-consent-banner__decline-button {
+  color: var(--gp-consent-banner-decline-btn-text-color);
+  background-color: var(--gp-consent-banner-decline-btn-bg-color);
+}
+
+@media (max-width: 768px) {
+  .gropulse-consent-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .gropulse-consent-banner__text-wrapper {
+    font-size: 15px;
+
+    margin-bottom: 15px;
+    padding-left: 30px;
+  }
+
+  .gropulse-consent-banner__button-wrapper {
+    padding-right: 30px;
+    padding-left: 30px;
+
+    text-align: left;
+  }
+
+  .gropulse-consent-banner__button-wrapper button {
+    font-size: 14px;
+
+    padding: 10px 15px;
+  }
+}

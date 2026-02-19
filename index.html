@@ -1,0 +1,981 @@
+<html lang="pt-br"><head>
+    
+  	<meta charset="utf-8">
+  
+    <title>Notícia Atualizada | Moda </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+      
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+/* =============================================
+   FACEBOOK-STYLE COMMENTS — REBUILD COMPLETO
+   Remove conflito com Bootstrap grid
+   ============================================= */
+
+#fbcomment {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 8px;
+  padding: 20px 24px 28px;
+}
+
+/* ---- CABEÇALHO ---- */
+.fb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e4e6eb;
+  margin-bottom: 20px;
+}
+
+.fb-header .count_comment {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1c1e21;
+}
+
+.fb-header .sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #65676b;
+}
+
+.fb-header .sort_by {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1877f2;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ---- CAMPO DE COMENTÁRIO ---- */
+.fb-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.fb-input-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: url('images/nulo.jpg') center/cover #ccc;
+  border: 1px solid #ddd;
+  flex-shrink: 0;
+}
+
+.fb-input-right {
+  flex: 1;
+  background: #f0f2f5;
+  border: 1px solid #ccd0d5;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fb-input-right textarea.commentar {
+  flex: 1;
+  min-width: 120px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #1c1e21;
+  resize: none;
+  min-height: 24px;
+  line-height: 1.4;
+  font-family: inherit;
+}
+
+.fb-input-right textarea.commentar::placeholder { color: #8a8d91; }
+
+.fb-input-right label {
+  font-size: 13px;
+  color: #65676b;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0;
+}
+
+.fb-input-right label input { margin-right: 4px; }
+
+.fb-input-right button {
+  background-color: #c4170c;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter 0.15s;
+}
+
+.fb-input-right button:hover { filter: brightness(0.88); }
+
+/* ---- LISTA DE COMENTÁRIOS ---- */
+#list_comment {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- ITEM COMENTÁRIO ---- */
+.fb-comment-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.fb-comment-item .fb-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.fb-comment-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.fb-bubble {
+  background: #f0f2f5;
+  border-radius: 18px;
+  padding: 10px 16px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.fb-bubble .fb-author {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #050505;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.fb-bubble .fb-text {
+  font-size: 14.5px;
+  color: #1c1e21;
+  line-height: 1.55;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* ---- BARRA DE AÇÕES ---- */
+.fb-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding-left: 4px;
+  flex-wrap: wrap;
+}
+
+.fb-actions a {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #65676b;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.fb-actions a:hover { color: #1877f2; }
+
+.fb-actions .fb-sep {
+  color: #ccd0d5;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.fb-reaction {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid #e4e6eb;
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 13px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  cursor: default;
+}
+
+.fb-actions .fb-time {
+  font-size: 12px;
+  color: #8a8d91;
+  font-weight: 400;
+}
+
+/* ---- RESPOSTAS ANINHADAS ---- */
+.fb-replies {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 50px;
+}
+
+.fb-replies .fb-comment-item { margin-bottom: 12px; }
+
+.fb-replies .fb-avatar {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+}
+
+.fb-replies .fb-bubble {
+  background: #e9ebee;
+  border-radius: 16px;
+  padding: 9px 14px;
+}
+
+.fb-replies .fb-bubble .fb-text { font-size: 14px; }
+
+/* Separador leve */
+#list_comment > .fb-comment-item {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f0f2f5;
+}
+#list_comment > .fb-comment-item:last-child { border-bottom: none; }
+
+/* ---- CAMPO DE RESPOSTA ---- */
+.reply-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 8px 0 4px 0;
+}
+
+.reply-input-row .fb-avatar {
+  width: 32px; height: 32px; min-width: 32px;
+  border-radius: 50%;
+  background: url('images/nulo.jpg') center/cover #ccc;
+  flex-shrink: 0;
+}
+
+.reply-input-inner {
+  flex: 1;
+  background: #f0f2f5;
+  border: 1px solid #ccd0d5;
+  border-radius: 18px;
+  padding: 8px 14px;
+}
+
+.reply-input-inner textarea.comment_responder {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #1c1e21;
+  resize: none;
+  min-height: 20px;
+  line-height: 1.4;
+  font-family: inherit;
+}
+
+.reply-input-inner textarea.comment_responder::placeholder { color: #8a8d91; }
+
+.reply-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.reply-btns button {
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.reply-btns .btn-cancel {
+  background: #e4e6eb;
+  color: #1c1e21;
+}
+
+.reply-btns .btn-reply {
+  background-color: #c4170c;
+  color: #fff;
+}
+
+/* =============================================
+   RESPONSIVO MOBILE
+   ============================================= */
+@media (max-width: 600px) {
+  #fbcomment { padding: 14px 12px 20px; }
+  .fb-replies { margin-left: 32px; }
+  .fb-bubble .fb-text { font-size: 14px; }
+}
+</style>
+
+<!-- Taboola Pixel Code -->
+<script>
+    _tfa.push({notify: 'event', name: 'view_content', id: 1990165});
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '929113910066933');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=929113910066933&ev=PageView&noscript=1"
+/></noscript>
+
+  </head><body>
+
+<section class="topo-0">  
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-10 text-left">
+        <img src="images/noticia02.png" class="img-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topo-11">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-8 text-center">
+        <p class="titulo-topo-11">Moda</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="topo-1">  
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      
+      <div class="col-12 col-md-10 text-left">
+
+        <p class="texto-adv">PORTAL "NOTÍCIA ATUALIZADA"</p>
+
+        <h1 class="titulo">Mulheres Brasileiras Enlouquecem com Oferta de Aniversário da LOUIS VUITTON</h1>
+
+        <h2 class="subtitulo">A icônica Bolsa Sac Neverfull com 45% de desconto + 2 PRESENTES exclusivos, apenas até as 23h59 de hoje.</h2>
+        <br>
+
+        <a href="#" onclick="window.location.href='https://www.usezahra.shop/adv/pv'">
+          <img src="images/modelolv.png" class="img-max">
+        </a>
+
+        <div class="articleInfo">
+          <img class="photoAuthor" src="images/autor.jpg">
+          Por <span class="articleAuthor"> Rogério Silva,</span>
+          <script language="javascript">
+            var dayNames = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
+            var monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+            var now = new Date();
+            document.write(dayNames[now.getDay()] + ", " + now.getDate() + " de " + monthNames[now.getMonth()] + " de " + now.getFullYear());
+          </script>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-10 text-left">
+
+        <br>
+
+        <div>
+          <p class="texto">A tradicional maison francesa Louis Vuitton, referência mundial em luxo, sofisticação e exclusividade, está celebrando um marco especial de sua trajetória no Brasil de forma surpreendente: oferecendo um de seus modelos mais icônicos com <b>45% de desconto em uma campanha relâmpago válida por apenas 24 horas</b> —
+          <script language="javascript">
+            var dayNames = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
+            var monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+            var now = new Date();
+            document.write(dayNames[now.getDay()] + ", " + now.getDate() + " de " + monthNames[now.getMonth()] + " de " + now.getFullYear());
+          </script>
+          </p>
+        </div>
+
+        <p class="texto">Reconhecida globalmente por seu acabamento artesanal impecável, couro premium e design atemporal, a marca decidiu abrir o estoque de uma de suas bolsas mais desejadas em uma ação inédita voltada <b>exclusivamente ao público brasileiro.</b></p>
+
+        <p class="texto">A peça escolhida para a campanha foi a clássica <b>Neverfull Monogram</b>, símbolo de status, elegância e poder feminino, considerada uma das bolsas mais vendidas da história da marca.</p>
+
+        <p class="texto">"<b>Queremos celebrar esse momento especial com as mulheres brasileiras que sempre enxergaram na Louis Vuitton mais do que uma bolsa — mas uma declaração de estilo, confiança e sofisticação"</b>, declarou um representante oficial da Louis Vuitton.</p>
+
+        <a href="https://www.usezahra.shop/adv/pv"><img src="images/lojalouisvuitton.png" class="img-max"></a>
+        <br><br>
+          
+        <h3 class="titulo-texto">O símbolo que poucas mulheres no mundo possuem</h3>
+
+        <p class="texto">Hoje, estima-se que menos de uma pequena parcela das mulheres no mundo tenham acesso a uma bolsa original da <b>Louis Vuitton</b>. Isso se deve à combinação de produção artesanal rigorosa, materiais premium selecionados e um padrão de excelência que torna cada peça um verdadeiro objeto de desejo.</p>
+
+        <p class="texto">Cada bolsa passa por processos minuciosos de fabricação, seguindo tradições da maison francesa que atravessam gerações. O controle de qualidade é extremamente criterioso, e a produção limitada mantém o status da marca entre celebridades, empresárias e mulheres influentes ao redor do mundo.</p>
+
+        <p class="texto">Ter uma bolsa Louis Vuitton vai muito além da estética. É um símbolo silencioso de poder. De conquista. De presença. É carregar no braço uma assinatura reconhecida globalmente. E agora, de forma absolutamente inédita, <b>essa experiência de luxo está temporariamente ao alcance de mais brasileiras</b>.</p>
+
+        <h3 class="titulo-texto">Oferta exclusiva: Bolsa icônica Louis Vuitton + 2 presentes especiais!</h3>
+
+        <p class="texto">Um dos modelos mais desejados da maison, a clássica <b>Neverfull Monogram</b>, tradicionalmente encontrada por valores elevados nas boutiques oficiais, está sendo disponibilizada com <b>45% de desconto durante essa ação especial comemorativa</b>.</p>
+
+        <p class="texto">E não para por aí: <b>como presente adicional, cada cliente receberá gratuitamente dois itens de luxo para acompanhar a bolsa:</b></p>
+
+        <p class="texto">• 1 Necessaire clés S</p>
+        <p class="texto">• 1 Carteira Sac Speedy Bandoulière</p>
+
+        <p class="texto">Ou seja, além da bolsa, você recebe <b>dois acessórios premium sem custo adicional</b>.</p>
+
+        <a href="https://www.usezahra.shop/adv/pv">
+          <img src="images/conjunto.png" class="img-max" alt="Conjunto de oferta">
+        </a>
+
+        <p class="texto"><b>Estoque da oferta de aniversário extremamente limitado.</b></p>
+
+        <br>
+        
+        <p class="texto">Por se tratar de uma ação pontual de aniversário institucional, a campanha foi estruturada com uma quantidade limitada de unidades e <b>não será renovada após o encerramento do prazo oficial.</b></p>
+
+        <p class="texto">Segundo informações divulgadas pela assessoria da marca, <b>mais de 80% do estoque foi esgotado nas primeiras horas</b>, impulsionado pela alta procura em diferentes regiões do país. As unidades restantes estão sendo liberadas gradualmente ao longo do dia, e a campanha <b>será encerrada ao final das 24 horas — <span id="dataHoje"></span> — sem qualquer possibilidade de prorrogação.</b></p>
+
+        <script>
+          var dayNames = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
+          var monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+          var now = new Date();
+          document.getElementById("dataHoje").innerText = dayNames[now.getDay()] + ", " + now.getDate() + " de " + monthNames[now.getMonth()] + " de " + now.getFullYear();
+        </script>
+
+        <br>
+
+        <p class="texto">Além do valor promocional aplicado, o site oficial também <b>oferece parcelamento em até 12x</b>, uma condição considerada incomum para peças da linha premium da Louis Vuitton.</p>
+
+        <h3 class="titulo-texto">Como garantir o seu conjunto com 45% OFF?</h3>
+
+        <p class="texto">A equipe do Notícia Atualizada teve acesso ao link oficial da campanha comemorativa. Caso ainda haja disponibilidade no momento do acesso, você pode acessar o <a href="https://www.usezahra.shop/adv/pv" class="link-oficial">SITE OFICIAL</a>, verificar o estoque e realizar sua compra de forma segura.</p>
+
+        <h3 class="titulo-texto">Clique no botão abaixo para verificar a disponibilidade no site oficial da campanha:</h3>
+
+        <a href="https://www.usezahra.shop/adv/pv" class="botao">👉 ACESSAR O SITE DA PROMOÇÃO COMEMORATIVA</a>
+
+        <br><br>
+
+        <p class="texto"><b>⚠️ Esta é uma campanha institucional comemorativa única. Não haverá reposição. Mais de 80% do estoque já esgotado. Se ainda houver unidades, finalize agora.</b></p>
+
+        <br><br>
+
+        <div class="col-12 col-md-8 text-center">
+          <a href="https://www.usezahra.shop/adv/pv">
+            <img src="images/site-seguro.png" class="box col-8 col-md-8">
+          </a>
+        </div>
+
+      </div>
+
+      <!-- =============================================
+           SEÇÃO DE COMENTÁRIOS — ESTILO FACEBOOK
+           ============================================= -->
+      <div class="col-12 col-md-10 text-left esp-topo">
+
+        <div style="margin-top:40px" id="fbcomment">
+
+          <!-- Cabeçalho -->
+          <div class="fb-header">
+            <span class="count_comment">💬 20 Comentários</span>
+            <div class="sort-wrap">
+              <span>Ordenar por</span>
+              <select class="sort_by">
+                <option>⭐ Melhores</option>
+                <option>🆕 Mais novo</option>
+                <option>📅 Mais antigo</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Campo de novo comentário -->
+          <div class="fb-input-row">
+            <div class="fb-input-avatar"></div>
+            <div class="fb-input-right">
+              <textarea class="commentar" placeholder="Escreva um comentário..." rows="1"></textarea>
+              <label><input type="checkbox" id="post_fb"> Publicar no Facebook</label>
+              <button onclick="submit_comment()" type="button">Comentar</button>
+            </div>
+          </div>
+
+          <!-- Lista de comentários -->
+          <ul id="list_comment">
+
+            <!-- COMENTÁRIO 1 -->
+            <li class="fb-comment-item">
+              <img src="images/1.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Cláudia Freitas · São Paulo, SP</span>
+                  <p class="fb-text">Confesso que fiquei desconfiada no começo — Louis Vuitton com esse desconto? Parecia bom demais pra ser verdade. Mas chegou hoje, com a embalagem original, o certificado, tudo impecável. Estou literalmente com lágrimas nos olhos. 😭❤️</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a>
+                  <span class="fb-sep">·</span>
+                  <a class="responder">Responder</a>
+                  <span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍❤️ <strong class="count">47</strong></span>
+                  <span class="fb-sep">·</span>
+                  <span class="fb-time">2 min</span>
+                </div>
+                <ul class="fb-replies">
+                  <li class="fb-comment-item">
+                    <img src="images/2.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Larissa Gomes · Porto Alegre, RS</span>
+                        <p class="fb-text">Eu também duvidei! Fiquei uns 3 dias com ela no carrinho com medo de ser golpe. Aí vi que era promoção comemorativa oficial e arrisquei. Melhor decisão da minha vida. A bolsa é REAL e chegou em 2 dias. 😍</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a>
+                        <span class="fb-sep">·</span>
+                        <a class="responder">Responder</a>
+                        <span class="fb-sep">·</span>
+                        <span class="fb-reaction">👍 <strong class="count">31</strong></span>
+                        <span class="fb-sep">·</span>
+                        <span class="fb-time">18 min</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 2 -->
+            <li class="fb-comment-item">
+              <img src="images/nulo.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Daniela Assis · Belo Horizonte, MG</span>
+                  <p class="fb-text">Sempre achei que nunca ia conseguir ter uma Louis Vuitton original. Esse desconto comemorativo quebrou todas as minhas barreiras. Primeiro pensamento quando abri a caixa: "Isso é de verdade". Qualidade que você sente na mão.</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">❤️ <strong class="count">22</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">1 dia</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 3 -->
+            <li class="fb-comment-item">
+              <img src="images/4.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Rafaela Costa · Curitiba, PR</span>
+                  <p class="fb-text">Gente, eu pesquisei MUITO antes de comprar. Vi o preço original, comparei tudo. Essa promoção comemorativa é real e é por tempo limitadíssimo. Não perca como eu quase perdi. Comprei no último dia e chegou perfeita.</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍🔥 <strong class="count">58</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">45 min</span>
+                </div>
+                <ul class="fb-replies">
+                  <li class="fb-comment-item">
+                    <img src="images/5.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Fernanda Soares · Brasília, DF</span>
+                        <p class="fb-text">Isso mesmo, Rafaela! Eu quase deixei passar. Minha cunhada comprou primeiro e quando vi pessoalmente na mão dela fui correndo comprar a minha. O couro, o acabamento... é impossível não se apaixonar.</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                        <a class="responder">Responder</a><span class="fb-sep">·</span>
+                        <span class="fb-reaction">❤️ <strong class="count">19</strong></span><span class="fb-sep">·</span>
+                        <span class="fb-time">10 min</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 4 -->
+            <li class="fb-comment-item">
+              <img src="images/6.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Lucas Mendonça · São Paulo, SP</span>
+                  <p class="fb-text">Comprei de presente pra minha esposa no aniversário dela. Ela chorou. Disse que nunca esperava ganhar uma Louis Vuitton original. Esse desconto me permitiu fazer algo que eu achava impossível. Obrigado demais. 🥹</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">❤️😍 <strong class="count">38</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">48 min</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 5 -->
+            <li class="fb-comment-item">
+              <img src="images/7.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Juliana Martins · Salvador, BA</span>
+                  <p class="fb-text">Olha, já vi muita promoção falsa na internet. Essa eu testei: liguei no SAC, confirmei a procedência, verifiquei tudo. É LEGÍTIMO. E a bolsa é ainda mais linda pessoalmente do que nas fotos. Compra sem medo. ✅</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍❤️ <strong class="count">67</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">52 min</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 6 -->
+            <li class="fb-comment-item">
+              <img src="images/9.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Bianca Teixeira · Florianópolis, SC</span>
+                  <p class="fb-text">Estava com medo de parcelar e o produto não corresponder. Mas o material, o peso, o cheiro do couro genuíno... você sabe na hora que é original. Valeu cada parcela. E nem doeu no bolso com esse preço comemorativo. 😌</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍 <strong class="count">44</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">1h</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 7 -->
+            <li class="fb-comment-item">
+              <img src="images/nulo.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Marina Souza · Rio de Janeiro, RJ</span>
+                  <p class="fb-text">Trabalho com moda há 10 anos. Consigo identificar produto falso de longe. Essa bolsa é 100% original — costura impecável, ferragens pesadas, couro legítimo. Com desconto comemorativo, então? Impossível não comprar. 🤌</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍🔥 <strong class="count">29</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">2h</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 8 -->
+            <li class="fb-comment-item">
+              <img src="images/12.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Thalita Santos · Recife, PE</span>
+                  <p class="fb-text">Fiz o pedido numa sexta, recebi na segunda. Embalagem lacrada, com nota fiscal e todos os acessórios originais. Pra quem tem medo da entrega: pode confiar, é tudo muito profissional. 📦✅</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍 <strong class="count">15</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">2h</span>
+                </div>
+                <ul class="fb-replies">
+                  <li class="fb-comment-item">
+                    <img src="images/nulo.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Alessandra Menezes · Vitória, ES</span>
+                        <p class="fb-text">Cheguei a rastrear o pacote de hora em hora de tanta ansiedade. 😂 Chegou antes do prazo e ainda veio com aquele cheirinho inconfundível de couro Louis Vuitton. Perfeita em todos os detalhes.</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                        <a class="responder">Responder</a><span class="fb-sep">·</span>
+                        <span class="fb-reaction">😂❤️ <strong class="count">72</strong></span><span class="fb-sep">·</span>
+                        <span class="fb-time">12 min</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 9 -->
+            <li class="fb-comment-item">
+              <img src="images/14.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Gabriela Pinheiro · Campinas, SP</span>
+                  <p class="fb-text">Minha maior objeção era: "vou comprar e nunca mais ver meu dinheiro". Mas vi que tinham garantia e política de devolução. Comprei. E não precisei de nada disso — porque a bolsa é perfeita. Só vim aqui confirmar pra quem ainda tá em dúvida. 💯</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍 <strong class="count">11</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">4h</span>
+                </div>
+                <ul class="fb-replies">
+                  <li class="fb-comment-item">
+                    <img src="images/15.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Luana Barros · Goiânia, GO</span>
+                        <p class="fb-text">Isso! E olha, quem conhece Louis Vuitton sabe que o preço normal é salgadíssimo. Essa promoção comemorativa é uma janela que fecha. Eu fechei em 5 minutos com medo de esgotar. E bem que fiz — já vi que acabou pra alguns modelos.</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                        <a class="responder">Responder</a><span class="fb-sep">·</span>
+                        <span class="fb-reaction">🔥 <strong class="count">33</strong></span><span class="fb-sep">·</span>
+                        <span class="fb-time">6h</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO 10 -->
+            <li class="fb-comment-item">
+              <img src="images/16.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Patrícia Rocha · Teresina, PI</span>
+                  <p class="fb-text">Sou muito cuidadosa com compras online. Mas pesquisei os comentários, vi os vídeos de unboxing, li as avaliações... tudo batia. Decidi comprar e foi a melhor decisão. A Louis Vuitton comemorativa é puro investimento. 💎</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍 <strong class="count">8</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">6h</span>
+                </div>
+                <ul class="fb-replies">
+                  <li class="fb-comment-item">
+                    <img src="images/nulo.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Melissa Oliveira · São Luís, MA</span>
+                        <p class="fb-text">Bolsa de grife não é gasto, é investimento. Eu revendi a minha anterior por mais do que paguei. Com esse desconto então? É literalmente dinheiro no bolso. Já estou pensando em comprar a segunda. 💸</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                        <a class="responder">Responder</a><span class="fb-sep">·</span>
+                        <span class="fb-reaction">👍🔥 <strong class="count">21</strong></span><span class="fb-sep">·</span>
+                        <span class="fb-time">13h</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                  <li class="fb-comment-item">
+                    <img src="images/nulo.jpg" alt="avatar" class="fb-avatar">
+                    <div class="fb-comment-body">
+                      <div class="fb-bubble">
+                        <span class="fb-author">Karina Lopes · Manaus, AM</span>
+                        <p class="fb-text">Quem entende de moda sabe que Louis Vuitton não desvaloriza. Comprar com desconto comemorativo é raro demais. Daqui a pouco vão perguntar onde você comprou e ninguém vai acreditar no preço que você pagou. 😏</p>
+                      </div>
+                      <div class="fb-actions">
+                        <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                        <a class="responder">Responder</a><span class="fb-sep">·</span>
+                        <span class="fb-reaction">😂❤️ <strong class="count">18</strong></span><span class="fb-sep">·</span>
+                        <span class="fb-time">22h</span>
+                      </div>
+                      <ul class="fb-replies"></ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- COMENTÁRIO FINAL -->
+            <li class="fb-comment-item">
+              <img src="images/19.jpg" alt="avatar" class="fb-avatar">
+              <div class="fb-comment-body">
+                <div class="fb-bubble">
+                  <span class="fb-author">Aline Ribeiro · Fortaleza, CE</span>
+                  <p class="fb-text">Última dica pra quem ainda tá em dúvida: PARA DE PENSAR E COMPRA. Eu fiquei 1 semana em dúvida. Quase perdi. Consegui pegar o último lote e estou aqui sem arrependimento nenhum. A promoção é real, o produto é original, a entrega é rápida. Não tem erro. 🙌🔥</p>
+                </div>
+                <div class="fb-actions">
+                  <a class="Curtir">👍 Curtir</a><span class="fb-sep">·</span>
+                  <a class="responder">Responder</a><span class="fb-sep">·</span>
+                  <span class="fb-reaction">👍❤️🔥 <strong class="count">94</strong></span><span class="fb-sep">·</span>
+                  <span class="fb-time">1 dia</span>
+                </div>
+                <ul class="fb-replies"></ul>
+              </div>
+            </li>
+
+          </ul><!-- fim list_comment -->
+        </div><!-- fim fbcomment -->
+
+        <br>
+        <a href="https://www.usezahra.shop/adv/pv" class="botao">👉 ACESSAR O SITE DA PROMOÇÃO COMEMORATIVA</a>
+
+      </div><!-- fim col esp-topo -->
+
+    </div><!-- fim row -->
+  </div><!-- fim container -->
+</section>
+
+
+<section class="rodape">  
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-10 text-center">
+        <p class="texto-rodape">
+          <a href="https://www.usezahra.shop/adv/pv">Sobre Nós</a>
+          <a href="https://www.usezahra.shop/adv/pv">Termos de Uso</a>
+          <a href="https://www.usezahra.shop/adv/pv">Política de Privacidade</a>
+        </p>
+        <p class="texto-rodape"><small>As marcas registradas utilizadas em nosso site pertencem aos seus respectivos proprietários, e não há nenhuma aprovação implícita ou expressa de nosso site ou serviços. Por meio de pesquisas detalhadas e editores experientes, fornecemos feedback sobre produtos e serviços. Somos independentes, e as opiniões expressas aqui são nossas. Este site é um serviço independente de comparação e análise profissional apoiado por taxas de indicação dos sites e produtos apresentados.</small></p>
+        <p class="texto-rodape"><small>©2025 Notícia Atualizada. Todos os Direitos Reservados.</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>   
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="css/all.min.css">
+<script src="js/utmkeeper.js" charset="utf-8"></script>
+<script charset="utf-8">utmkeeper.load();</script>
+<script src="js/tempo.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+function submit_comment(){
+  var comment = $('.commentar').val();
+  if(!comment.trim()) return;
+  var el = document.createElement('li');
+  el.className = "fb-comment-item";
+  el.innerHTML =
+    '<img src="images/nulo.jpg" alt="avatar" class="fb-avatar">'+
+    '<div class="fb-comment-body">'+
+      '<div class="fb-bubble">'+
+        '<span class="fb-author">Você</span>'+
+        '<p class="fb-text">'+ comment +'</p>'+
+      '</div>'+
+      '<div class="fb-actions">'+
+        '<a class="Curtir">👍 Curtir</a>'+
+        '<span class="fb-sep">·</span>'+
+        '<a class="responder">Responder</a>'+
+        '<span class="fb-sep">·</span>'+
+        '<span class="fb-reaction">👍 <strong class="count">0</strong></span>'+
+        '<span class="fb-sep">·</span>'+
+        '<span class="fb-time">Agora</span>'+
+      '</div>'+
+      '<ul class="fb-replies"></ul>'+
+    '</div>';
+  document.getElementById('list_comment').prepend(el);
+  $('.commentar').val('');
+}
+
+$(document).ready(function() {
+
+  $('#list_comment').on('click', '.Curtir', function(e) {
+    var $btn = $(this);
+    var $count = $btn.closest('.fb-actions').find('.count');
+    var y = parseInt($count.text());
+    if ($btn.data('liked')) {
+      $btn.data('liked', false);
+      $btn.html('👍 Curtir');
+      $count.text(y - 1);
+    } else {
+      $btn.data('liked', true);
+      $btn.html('💙 Curtindo');
+      $count.text(y + 1);
+    }
+  });
+
+  $('#list_comment').on('click', '.responder', function(e) {
+    cancel_reply();
+    $current = $(this);
+    var el = document.createElement('li');
+    el.className = "fb-comment-item reply-input-wrap";
+    el.innerHTML =
+      '<div class="fb-avatar reply-avatar-placeholder"></div>'+
+      '<div class="reply-input-inner">'+
+        '<textarea class="comment_responder" placeholder="Escreva uma resposta..."></textarea>'+
+        '<div class="reply-btns">'+
+          '<button class="btn-cancel cancel" onclick="cancel_reply()" type="button">Cancelar</button>'+
+          '<button class="btn-reply" onclick="submit_reply()" type="button">Responder</button>'+
+        '</div>'+
+      '</div>';
+    $current.closest('.fb-comment-body').find('.fb-replies').first().prepend(el);
+  });
+
+});
+
+function submit_reply(){
+  var txt = $('.comment_responder').val();
+  if(!txt.trim()) return;
+  var el = document.createElement('li');
+  el.className = "fb-comment-item";
+  el.innerHTML =
+    '<img src="images/nulo.jpg" alt="avatar" class="fb-avatar">'+
+    '<div class="fb-comment-body">'+
+      '<div class="fb-bubble">'+
+        '<span class="fb-author">Você</span>'+
+        '<p class="fb-text">'+ txt +'</p>'+
+      '</div>'+
+      '<div class="fb-actions">'+
+        '<a class="Curtir">👍 Curtir</a>'+
+        '<span class="fb-sep">·</span>'+
+        '<a class="responder">Responder</a>'+
+        '<span class="fb-sep">·</span>'+
+        '<span class="fb-reaction">👍 <strong class="count">0</strong></span>'+
+        '<span class="fb-sep">·</span>'+
+        '<span class="fb-time">Agora</span>'+
+      '</div>'+
+      '<ul class="fb-replies"></ul>'+
+    '</div>';
+  $current.closest('.fb-comment-body').find('.fb-replies').first().prepend(el);
+  cancel_reply();
+}
+
+function cancel_reply(){
+  $('.reply-input-wrap').remove();
+}
+
+</script>
+
+</body></html>
