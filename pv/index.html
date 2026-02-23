@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Oferta Exclusiva Louis Vuitton</title>
+  <title>Bolsa Louis Vuitton Neverfull — 45% OFF + Frete Grátis</title>
 
-  <meta property="og:title" content="Cupom Exclusivo Louis Vuitton">
+  <meta property="og:title" content="Bolsa Louis Vuitton Neverfull — 45% OFF + Frete Grátis">
   <meta property="og:type" content="website">
-  <meta name="twitter:title" content="Cupom Exclusivo Louis Vuitton">
+  <meta name="twitter:title" content="Bolsa Louis Vuitton Neverfull — 45% OFF + Frete Grátis">
 
   <!-- ✅ META PIXEL -->
   <script>
@@ -630,10 +630,88 @@
       .pf-63_ { font-size: 28px; line-height: 36px; }
       .pf-66_ { font-size: 16px; }
     }
+
+    /* ===================================================
+       URGÊNCIA + PERSUASÃO — PV
+       =================================================== */
+    @keyframes goldPulse {
+      0%,100% { box-shadow: 0 3px 10px rgba(201,168,76,0.4); transform: scale(1); }
+      50%      { box-shadow: 0 6px 28px rgba(201,168,76,0.75); transform: scale(1.025); }
+    }
+    .pf-89_ { animation: goldPulse 2s ease-in-out infinite !important; }
+    .pf-89_:hover { animation: none !important; }
+
+    .btn-cta { animation: goldPulse 2s ease-in-out infinite; }
+    .btn-cta:hover { animation: none; }
+
+    .cupons-urgency { text-align:center; margin-bottom:24px; font-family:Roboto,sans-serif; }
+    .cupons-urgency-label { font-size:14px; color:#c4170c; font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+    .cupons-timer { font-size:38px; font-weight:900; color:#c4170c; letter-spacing:3px; }
+
+    .kit-recommended { position:relative; }
+    .kit-recommended .pf-99_ {
+      border: 3px solid #C9A84C !important;
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.35) !important;
+    }
+    .badge-popular {
+      position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+      background:linear-gradient(135deg,#C9A84C,#E8C96A);
+      color:#2C1A0E; font-size:13px; font-weight:900;
+      padding:5px 18px; border-radius:20px; white-space:nowrap;
+      z-index:10; font-family:Roboto,sans-serif; letter-spacing:0.5px;
+    }
+
+    .stock-bar-wrap { margin:0 20px 16px; }
+    .stock-bar-label { font-size:13px; color:#c4170c; font-weight:700; margin-bottom:5px; font-family:Roboto,sans-serif; }
+    .stock-bar-bg { background:#f0e8d8; border-radius:20px; height:10px; overflow:hidden; }
+    .stock-bar-fill { background:linear-gradient(to right,#c4170c,#e85d04); height:100%; border-radius:20px; }
+
+    .review-item { display:flex; gap:14px; align-items:flex-start; margin:24px 0; padding-bottom:20px; border-bottom:1px solid #f0f0f0; }
+    .review-avatar {
+      width:46px; height:46px; border-radius:50%;
+      background:linear-gradient(135deg,#2C1A0E,#C9A84C);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-weight:900; font-size:18px;
+      font-family:Roboto,sans-serif; flex-shrink:0;
+    }
+    .review-content { flex:1; }
+
+    .garantias-row {
+      display:flex; justify-content:center; gap:24px; flex-wrap:wrap;
+      padding:28px 20px; background:#fff8f0;
+      border-top:1px solid #f0e8d8; border-bottom:1px solid #f0e8d8;
+    }
+    .garantia-item {
+      display:flex; align-items:center; gap:10px;
+      font-family:Roboto,sans-serif; font-size:14px; font-weight:700; color:#2C1A0E;
+    }
+    .garantia-item .gi { font-size:28px; }
+
+    .live-notif {
+      position:fixed; bottom:20px; left:16px; z-index:9990;
+      background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+      padding:10px 14px; box-shadow:0 4px 20px rgba(0,0,0,0.15);
+      font-family:Roboto,sans-serif; font-size:13px; max-width:260px; display:none;
+    }
+    .live-dot { width:8px; height:8px; background:#22c55e; border-radius:50%; display:inline-block; margin-right:6px; }
+    @keyframes ldot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .live-dot { animation: ldot 1s infinite; }
+    @keyframes slideInL { from{transform:translateX(-110%);opacity:0} to{transform:translateX(0);opacity:1} }
+    @keyframes slideOutL { from{transform:translateX(0);opacity:1} to{transform:translateX(-110%);opacity:0} }
+
   </style>
 </head>
 
 <body>
+<!-- BARRA URGÊNCIA -->
+<div style="background:#c4170c;color:#fff;text-align:center;padding:10px 16px;font-size:14px;font-weight:700;position:sticky;top:0;z-index:9999;font-family:Roboto,sans-serif;">
+  ⚠️ ATENÇÃO: Oferta válida somente até <strong id="pvTimerBar">23:59:00</strong> de hoje — Restam poucas unidades!
+</div>
+<!-- NOTIF COMPRAS AO VIVO -->
+<div class="live-notif" id="liveNotif">
+  <span class="live-dot"></span><strong id="lnName">Ana S., SP</strong> <span id="lnAction">acabou de comprar a bolsa 🛍️</span>
+</div>
 <div class="__pf">
 
   <!-- ============================================================
@@ -659,7 +737,7 @@
 
         <!-- Coluna direita: detalhes do produto (alinhada ao topo da imagem) -->
         <div class="col-text">
-          <p class="prod-tag"><strong>NOVO</strong> | 875 vendidos</p>
+          <p class="prod-tag"><strong>🔥 OFERTA RELÂMPAGO</strong> | 875 vendidas · <span style="color:#c4170c;font-weight:700;">Restam poucas unidades</span></p>
           <h1 class="prod-title">Bolsa Louis Vuitton Neverfull Monogram</h1>
 
           <div class="stars-row">
@@ -693,7 +771,7 @@
       <!-- Botão centralizado acima da seta -->
       <div class="btn-cta-wrap">
         <!-- 🔗 LINK DO BOTÃO PRINCIPAL: substitua "#cupons" pelo link desejado -->
-        <a href="#cupons" class="btn-cta">Ver Ofertas Disponíveis</a>
+        <a href="#cupons" class="btn-cta">🔥 GARANTIR MINHA BOLSA COM 45% OFF</a>
       </div>
 
       <!-- Seta para baixo -->
@@ -701,13 +779,24 @@
     </div>
   </section>
 
+  <!-- GARANTIAS -->
+  <div class="garantias-row">
+    <div class="garantia-item"><span class="gi">🔒</span> Compra 100% Segura</div>
+    <div class="garantia-item"><span class="gi">🚚</span> Frete Grátis Brasil</div>
+    <div class="garantia-item"><span class="gi">💳</span> Parcele em 12x</div>
+    <div class="garantia-item"><span class="gi">↩️</span> Garantia 30 dias</div>
+    <div class="garantia-item"><span class="gi">💚</span> PIX 10% OFF</div>
+  </div>
+
   <!-- ============================================================
        SEÇÃO 3: CUPONS
        ============================================================ -->
   <section id="cupons" class="pf-60_">
     <div style="--cw:1170px">
+      <div style="text-align:center;margin-bottom:16px;"><span style="background:#32BCAD;color:#fff;font-family:Roboto,sans-serif;font-size:14px;font-weight:700;padding:7px 18px;border-radius:20px;">💚 PIX: 10% extra de desconto na finalização</span></div>
       <h3 class="pf-63_">Ofertas Disponíveis🔥</h3>
       <p class="pf-66_">Aproveite nossos cupons e ganhe até 50% de desconto + Frete Grátis para todo o Brasil.</p>
+      <div class="cupons-urgency"><div class="cupons-urgency-label">⏳ Oferta expira em:</div><div class="cupons-timer" id="pvTimer">23:59:00</div></div>
 
       <div class="pf-r" style="margin-top:30px;">
 
@@ -723,6 +812,7 @@
               <span class="pf-86_">,61</span>
             </div>
             <hr class="price-divider">
+            <div class="stock-bar-wrap"><div class="stock-bar-label">🔴 Estoque crítico: 7 unidades restantes</div><div class="stock-bar-bg"><div class="stock-bar-fill" style="width:88%"></div></div></div>
             <a href="https://seguro.usezahra.com/r/4YUYRSHWAG" target="_blank" class="pf-89_">COMPRAR AGORA</a>
             <p class="pf-92_">Vendido e entregue por <b>ZAHRA.SHOP</b></p>
             <p class="pf-95_">Frete Grátis</p>
@@ -731,7 +821,8 @@
         </div>
 
         <!-- KIT 2 -->
-        <div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:4;--c-lg:4">
+        <div class="pf-c kit-recommended" style="--c-xs:12;--c-sm:6;--c-md:4;--c-lg:4">
+          <div class="badge-popular">⭐ MAIS ESCOLHIDO</div>
           <div class="pf-99_">
             <img src="images/bolsa+carteira.png" class="pf-100_" alt="Kit 2">
             <p class="pf-74_">CUPOM 45% OFF</p>
@@ -742,6 +833,7 @@
               <span class="pf-86_">,62</span>
             </div>
             <hr class="price-divider">
+            <div class="stock-bar-wrap"><div class="stock-bar-label">🔴 Estoque crítico: 4 unidades restantes</div><div class="stock-bar-bg"><div class="stock-bar-fill" style="width:93%"></div></div></div>
             <a href="https://seguro.usezahra.com/r/PSIJYK6KIE" target="_blank" class="pf-89_">COMPRAR AGORA</a>
             <p class="pf-119_">Vendido e entregue por <b>ZAHRA.SHOP</b></p>
             <p class="pf-122_">Frete Grátis</p>
@@ -761,6 +853,7 @@
               <span class="pf-86_">,14</span>
             </div>
             <hr class="price-divider">
+            <div class="stock-bar-wrap"><div class="stock-bar-label">🔴 Estoque crítico: 3 unidades restantes</div><div class="stock-bar-bg"><div class="stock-bar-fill" style="width:97%"></div></div></div>
             <a href="https://seguro.usezahra.com/r/I74ERNXIA1" target="_blank" class="pf-89_">COMPRAR AGORA</a>
             <p class="pf-146_">Vendido e entregue por <b>ZAHRA.SHOP</b></p>
             <p class="pf-149_">Frete Grátis</p>
@@ -789,42 +882,67 @@
       </div>
 
       <!-- Avaliações -->
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Recomendo muito pela ótima qualidade</p>
-        <p class="review-body">Muitooo lindo, material Otimo parabéns, vou recomendar pra familia e amigos todos, vou tentar comprar mais um ainda pra poder dar de presente.</p>
-        <p class="review-time">há: 13 minutos</p>
+      <div class="review-item">
+        <div class="review-avatar">C</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Recomendo muito pela ótima qualidade</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Carla M. · SP</p>
+          <p class="review-body">Muitooo lindo, material Ótimo parabéns, vou recomendar pra familia e amigos todos, vou tentar comprar mais um ainda pra poder dar de presente. 😍</p>
+          <p class="review-time">há: 13 minutos</p>
+        </div>
       </div>
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Excelente</p>
-        <p class="review-body">Lindo demais, bom acabamento, esse material é de outro mundo!</p>
-        <p class="review-time">há: 39 minutos</p>
+      <div class="review-item">
+        <div class="review-avatar">J</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Excelente</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Juliana R. · RJ</p>
+          <p class="review-body">Lindo demais, bom acabamento, esse material é de outro mundo! Chegou bem embalado e rápido.</p>
+          <p class="review-time">há: 39 minutos</p>
+        </div>
       </div>
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Não encontramos todos os dias bolsa de luxo por este preço</p>
-        <p class="review-body">Desde que eu descobri que a campanha estava ativa fui buscar onde as bolsas estavam sendo vendidas sabendo que teria um preço muito abaixo do normal, feliz por ter conseguido a minha!</p>
-        <p class="review-time">há: 46 minutos</p>
+      <div class="review-item">
+        <div class="review-avatar">P</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Não encontramos todos os dias bolsa de luxo por este preço</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Patricia S. · MG</p>
+          <p class="review-body">Desde que eu descobri que a campanha estava ativa fui buscar onde as bolsas estavam sendo vendidas sabendo que teria um preço muito abaixo do normal, feliz por ter conseguido a minha!</p>
+          <p class="review-time">há: 46 minutos</p>
+        </div>
       </div>
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Valeu muito a pena, pois agora vou poder ter uma bolsa de luxo!</p>
-        <p class="review-body">Valeu pelo desconto, bolsa de luxo neste preço é um achado!</p>
-        <p class="review-time">há: 52 minutos</p>
+      <div class="review-item">
+        <div class="review-avatar">F</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Valeu muito a pena, pois agora vou poder ter uma bolsa de luxo!</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Fernanda L. · PR</p>
+          <p class="review-body">Valeu pelo desconto, bolsa de luxo neste preço é um achado! Superei minhas expectativas. ✅</p>
+          <p class="review-time">há: 52 minutos</p>
+        </div>
       </div>
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Desconto ainda no ar funcionando perfeitamente</p>
-        <p class="review-body">Fiquei com medo de ter chegado tarde demais depois de minha amiga ter comprado, ainda bem que deu tempo e já chegou em casa!!</p>
-        <p class="review-time">há 1 hora</p>
+      <div class="review-item">
+        <div class="review-avatar">B</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Desconto ainda no ar, funcionou perfeitamente</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Bruna C. · RS</p>
+          <p class="review-body">Fiquei com medo de ter chegado tarde demais depois de minha amiga ter comprado, ainda bem que deu tempo e já chegou em casa!!</p>
+          <p class="review-time">há: 1 hora</p>
+        </div>
       </div>
-      <div style="margin:20px 0">
-        <span class="star-gold">★★★★★</span>
-        <p class="review-name">Adorei, chegou tudo certinho em casa!</p>
-        <p class="review-body">Adorei! Qualidade acima do esperado, estou totalmente contente com a minha compra</p>
-        <p class="review-time">há: 1 hora</p>
+      <div class="review-item">
+        <div class="review-avatar">M</div>
+        <div class="review-content">
+          <span class="star-gold">★★★★★</span>
+          <p class="review-name">Adorei, chegou tudo certinho em casa!</p>
+          <p style="font-size:13px;color:#888;margin:2px 0 6px;font-family:Roboto,sans-serif;">Mariana T. · BA</p>
+          <p class="review-body">Adorei! Qualidade acima do esperado, estou totalmente contente com a minha compra. 🏆</p>
+          <p class="review-time">há: 1 hora</p>
+        </div>
       </div>
+
 
       <!-- 🔗 LINK DO BOTÃO DE AVALIAÇÕES: substitua "#" pelo link da oferta -->
       <a href="#cupons" class="pf-116_">CUPOM COM FRETE GRÁTIS</a>
@@ -849,7 +967,7 @@
           </details>
           <details style="margin-bottom:8px">
             <summary class="pf-anchor">Qual o prazo de entrega?</summary>
-            <div class="pf-accordion-content"><p>O Frete é Grátis para todo o Brasil e o prazo de entrega varia de 3 a 5 dias úteis.</p></div>
+            <div class="pf-accordion-content"><p>O Frete é Grátis para todo o Brasil e o prazo de entrega é de 3 a 7 dias úteis.</p></div>
           </details>
         </div>
         <div class="pf-c" style="--c-xs:12;--c-sm:6">
@@ -863,7 +981,7 @@
           </details>
           <details style="margin-bottom:8px">
             <summary class="pf-anchor">Tem garantia?</summary>
-            <div class="pf-accordion-content"><p>Sim, oferecemos garantia para trocas e devoluções em até 7 dias após o recebimento do produto.</p></div>
+            <div class="pf-accordion-content"><p>Sim, oferecemos garantia para trocas e devoluções em até 30 dias após o recebimento do produto.</p></div>
           </details>
         </div>
       </div>
@@ -941,5 +1059,40 @@
   </footer>
 
 </div>
+
+<script>
+// CONTADOR REGRESSIVO
+(function(){
+  var end = new Date(); end.setHours(23,59,0,0);
+  function tick(){
+    var d = Math.max(0, end - new Date());
+    var h = String(Math.floor(d/3600000)).padStart(2,'0');
+    var m = String(Math.floor(d%3600000/60000)).padStart(2,'0');
+    var s = String(Math.floor(d%60000/1000)).padStart(2,'0');
+    var t = h+':'+m+':'+s;
+    ['pvTimer','pvTimerBar'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=t;});
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+// NOTIFICAÇÕES DE COMPRAS AO VIVO
+(function(){
+  var names=['Ana S., SP','Fernanda L., RJ','Carla M., MG','Juliana R., RS','Patricia O., BA','Beatriz C., PR','Mariana F., CE','Renata A., SC'];
+  var actions=['acabou de comprar a bolsa 🛍️','garantiu o kit completo ✅','finalizou o pedido agora 🔥','comprou com PIX 💚'];
+  function show(){
+    var el=document.getElementById('liveNotif');
+    if(!el)return;
+    document.getElementById('lnName').textContent=names[Math.floor(Math.random()*names.length)];
+    document.getElementById('lnAction').textContent=actions[Math.floor(Math.random()*actions.length)];
+    el.style.display='block';
+    el.style.animation='slideInL 0.5s ease forwards';
+    setTimeout(function(){
+      el.style.animation='slideOutL 0.5s ease forwards';
+      setTimeout(function(){el.style.display='none';},500);
+    },4000);
+  }
+  setTimeout(function(){show();setInterval(show,14000+Math.random()*6000);},6000);
+})();
+</script>
 </body>
 </html>
